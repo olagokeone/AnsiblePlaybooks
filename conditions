@@ -4,4 +4,5 @@
    - name: Install list of packages
      yum:
        name: ['nano', 'wget', 'vim', 'zip', 'unzip']
+       state: present
      when: ("ansible_distribution" == "RedHat")
