@@ -1,0 +1,16 @@
+vars.yml 
+---
+- hosts: db
+  vars:
+    name: From Playbook
+    password: dev@123
+  tasks:
+  - name:  demo vars
+    debug:
+      msg: "{{name}}"
+  - name: vars demo2
+    debug:
+      msg: "{{password}}"
+-----------------------------------------------------------
+If I run this playbook: debug is like echo command. demo vars message will be "From Playbook; and vars demo2 message will be dev@123. This is called Playbook Variables.
+To define runtime variables: ansible-playbook vars.yml --extra-vars "password=test"
